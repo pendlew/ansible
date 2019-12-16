@@ -1,0 +1,14 @@
+- name: Install p910nd packages
+  package:
+    name: 
+      - p910nd
+    state: present
+ 
+- name: Start service p910nd if not started
+  service:
+    name: p910nd
+    enabled: yes
+    state: started
+ 
+  tags:
+    - p910nd
