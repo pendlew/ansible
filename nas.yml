@@ -1,10 +1,12 @@
 ---
 - name: nas
   hosts: rpinas
-  remote_user: pete
+  remote_user: ubuntu
   become: "True"
   become_method: sudo
 
   roles:
     - netdata
+    - zfs
+    - nfs
   
