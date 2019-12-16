@@ -1,0 +1,8 @@
+---
+- name: Printer
+  hosts: rpiprinter
+  remote_user: pete
+  become: yes
+
+  roles:
+    - netdata
