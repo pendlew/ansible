@@ -1,0 +1,8 @@
+---
+- name: Printer
+  hosts: rpiprinter
+  become: yes
+  gather_facts: False
+  
+roles:
+  - netdata
