@@ -4,10 +4,10 @@
       - netdata
     state: present
  
- - name: Start service netdata if not started
-   service:
-     name: netdata
-     state: started
+- name: Start service netdata if not started
+  service:
+    name: netdata
+    state: started
  
   tags:
     - netdata
