@@ -1,6 +1,0 @@
-- name: remove the unwanted Ubuntu rpi packages
-  package:
-    name:
-      - snapd
-      - cloud-init
-    state: absent
