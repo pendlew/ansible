@@ -1,1 +1,14 @@
-
+- name: Install nfs packages
+  package:
+    name: 
+      - nfs-kernel-server
+    state: present
+ 
+- name: Start service nfs if not started
+  service:
+    name: nfs-server
+    enabled: yes
+    state: started
+ 
+  tags:
+    - nfs
