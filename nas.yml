@@ -9,4 +9,5 @@
     - netdata
     - zfs
     - nfs
+    - cleanup
   
