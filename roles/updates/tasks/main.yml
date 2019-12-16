@@ -1,5 +1,5 @@
 - name: Update package lists
-  update_cache: yes
-  package:
-    name: "*"
-    state: latest
+    update_cache: yes
+    package:
+      name: "*"
+      state: latest
