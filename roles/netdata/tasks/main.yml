@@ -7,6 +7,7 @@
 - name: Start service netdata if not started
   service:
     name: netdata
+    enabled: yes
     state: started
  
   tags:
