@@ -7,3 +7,4 @@
 
   roles:
     - netdata
+    - p910nd
