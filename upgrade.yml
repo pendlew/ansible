@@ -1,6 +1,6 @@
 ---
 - name: Upgrades  
-  hosts: all
+  hosts: rpinas
   remote_user: pete
   become: "True"
   become_method: sudo
