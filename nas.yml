@@ -10,4 +10,5 @@
     - zfs
     - nfs
     - cleanup
+    - haveged
   
