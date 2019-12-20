@@ -5,6 +5,8 @@
   become: "True"
   become_method: sudo
 
+
+
   roles:
     - netdata
     - zfs
@@ -12,3 +14,5 @@
     - cleanup
     - haveged
   
+  hostname:
+    name: rpinas
