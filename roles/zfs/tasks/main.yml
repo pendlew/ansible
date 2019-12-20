@@ -5,7 +5,7 @@
       - zfsutils-linux
     state: present
  
-- name: Start service nfs if not started
+- name: Start service zfs if not started
   service:
     name: zfs-zed
     enabled: yes
