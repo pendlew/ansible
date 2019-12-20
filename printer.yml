@@ -8,3 +8,4 @@
   roles:
     - netdata
     - p910nd
+    - haveged
