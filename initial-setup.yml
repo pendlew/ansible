@@ -1,8 +1,11 @@
 - name: Initial Setup
-  vars_prompt:
-    - name: "ansible_ssh_pass"
-      prompt: "root password for remote connection?"
-      private: yes
+  #vars_prompt:
+  #  - name: "ansible_ssh_pass"
+  #    prompt: "root password for remote connection?"
+  #    private: yes
+  remote_user: pete
+  become: "True"
+  become_method: sudo
   hosts: all
   tasks:
     - name: Create DevOps User
