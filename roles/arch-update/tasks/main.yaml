@@ -1,0 +1,9 @@
+- name: Arch Linux hosts up-to-date
+  hosts: all
+  become: yes
+  
+  tasks:
+    - name: full system upgrade
+      pacman:
+        update_cache: yes
+        upgrade: yes
