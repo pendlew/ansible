@@ -28,4 +28,4 @@
       authorized_key:
         user: devops
         state: present
-        key: "{{ lookup('file', '/home/devops/.ssh/id_rsa.pub') }}"
+        key: "{{ lookup('file', '~/ansible/devops_id_rsa.pub') }}"
