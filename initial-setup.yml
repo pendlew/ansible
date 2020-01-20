@@ -12,7 +12,7 @@
   #remote_user: pete
   become: "True"
   become_method: sudo
-  hosts: all
+  hosts: initial
   tasks:
     - name: Create DevOps User
       user:
