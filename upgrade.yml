@@ -1,9 +1,10 @@
 ---
-- name: Upgrades  
-  hosts: rpinas
+- name: Upgrade all hosts  
+  hosts: all
   #remote_user: pete
   #become: "True"
   #become_method: sudo
 
   roles:
-    - updates
+    - archupdates
+  when: ansible_distribution == 'Archlinux'  
