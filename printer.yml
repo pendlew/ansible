@@ -1,9 +1,9 @@
 ---
 - name: Printer
   hosts: rpiprinter
-  remote_user: pete
-  become: "True"
-  become_method: sudo
+  #remote_user: pete
+  #become: "True"
+  #become_method: sudo
 
   roles:
     - netdata
