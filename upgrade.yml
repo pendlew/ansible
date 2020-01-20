@@ -12,3 +12,10 @@
         update_cache: yes
         upgrade: yes
       when: ansible_distribution == 'Archlinux'  
+      
+    - name: Upgrade Ubuntu hosts
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+        upgrade: dist
+      when: ansible_distribution == "Ubuntu'  
