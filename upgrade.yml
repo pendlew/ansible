@@ -5,9 +5,10 @@
   #become: "True"
   #become_method: sudo
 
-
+  
   tasks:
-  - name: Upgrade Archlinux hosts
-    roles:
-      - archupdates
-    when: ansible_distribution == 'Archlinux'  
+    - name: Upgrade Archlinux hosts
+      pacman:
+        update_cache: yes
+        upgrade: yes
+      when: ansible_distribution == 'Archlinux'  
