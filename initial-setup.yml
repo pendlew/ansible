@@ -1,0 +1,22 @@
+- name: Initial Setup
+  vars_prompt:
+    - name: "ansible_ssh_pass"
+      prompt: "root password for remote connection?"
+      private: yes
+  hosts: all
+  tasks:
+    - name: Create DevOps User
+      user:
+        name: devops
+        state: present
+    - name: Add devops to sudoers
+      lineinfile:
+        path: /etc/sudoers.d/devops
+        line: "devops        ALL=(ALL)       NOPASSWD: ALL"
+        state: present
+        create: true
+    - name: Set authorized key
+      authorized_key:
+        user: devops
+        state: present
+        key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
