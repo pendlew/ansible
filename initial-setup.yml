@@ -1,9 +1,15 @@
 - name: Initial Setup
+  ####################################
+  #
+  # ansible-playbook -u USER -k -K initial-setup.yml
+  #
+  ####################################
+  
   #vars_prompt:
   #  - name: "ansible_ssh_pass"
   #    prompt: "root password for remote connection?"
   #    private: yes
-  remote_user: pete
+  #remote_user: pete
   become: "True"
   become_method: sudo
   hosts: all
