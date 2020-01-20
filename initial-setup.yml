@@ -29,3 +29,19 @@
         user: devops
         state: present
         key: "{{ lookup('file', '~/ansible/devops_id_rsa.pub') }}"
+
+    - name: Create pete User
+      user:
+        name: pete
+        state: present
+    - name: Add pete to sudoers
+      lineinfile:
+        path: /etc/sudoers.d/devops
+        line: "pete        ALL=(ALL)       NOPASSWD: ALL"
+        state: present
+        create: true
+    - name: Set authorized key
+      authorized_key:
+        user: pete
+        state: present
+        key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
