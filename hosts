@@ -3,11 +3,11 @@ rpinas
 rpiprinter
 
 [rpi]
-rpiprinter ansible_ssh_host=192.168.0.11
+rpiprinter
 
 
 [printer]
-rpiprinter ansible_ssh_host=192.168.0.11
+rpiprinter
 
 [nas]
-rpinas ansible_ssh_host=192.168.0.40
+rpinas
