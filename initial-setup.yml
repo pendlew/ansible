@@ -17,6 +17,7 @@
     - name: Create DevOps User
       user:
         name: devops
+        shell: /bin/bash
         state: present
     - name: Add devops to sudoers
       lineinfile:
@@ -33,6 +34,7 @@
     - name: Create pete User
       user:
         name: pete
+        shell: /bin/bash
         state: present
     - name: Add pete to sudoers
       lineinfile:
