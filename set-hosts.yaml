@@ -1,0 +1,11 @@
+---
+- name: set-hosts
+  hosts: rpinas
+  #remote_user: ubuntu
+  #become: "True"
+  #become_method: sudo
+
+
+
+  roles:
+    - hosts
