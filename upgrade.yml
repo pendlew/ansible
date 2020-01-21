@@ -2,8 +2,8 @@
 - name: Upgrade all hosts  
   hosts: all
   #remote_user: pete
-  #become: "True"
-  #become_method: sudo
+  become: "True"
+  become_method: sudo
 
   
   tasks:
