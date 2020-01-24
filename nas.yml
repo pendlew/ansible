@@ -5,6 +5,9 @@
   #become: "True"
   #become_method: sudo
 
+  vars:
+    share_path: /mnt/nfsroot
+
 
 
   roles:
