@@ -1,9 +1,9 @@
 ---
 - name: nas
   hosts: rpinas
-  #remote_user: ubuntu
-  #become: "True"
-  #become_method: sudo
+  remote_user: pete
+  become: "True"
+  become_method: sudo
 
   vars:
     share_path: /mnt/nfsroot
