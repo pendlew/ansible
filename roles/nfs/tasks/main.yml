@@ -9,24 +9,24 @@
     name: nfs-server
     enabled: yes
     state: started
- 
- - name: Create export folder
-   file:
-     path: "{{ share_path }}"
-     state: directory 
 
- - name: configure exports
-      template:
-        src: roles/nfs/files/exports.j2
-        dest: /etc/exports
+- name: Create export folder
+  file:
+    path: "{{ share_path }}"
+    state: directory 
+
+- name: configure exports
+    template:
+      src: roles/nfs/files/exports.j2
+      dest: /etc/exports
       notify: update nfs
       
-  handlers:
-    - name: update nfs exports
+handlers:
+  - name: update nfs exports
       command: exportfs -a
       listen: update nfs
  
  
  
-  tags:
-    - nfs
+ tags:
+   - nfs
