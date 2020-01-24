@@ -12,10 +12,9 @@
  
  - name: Create export folder
    file:
-      path: "{{ share_path }}"
-      state: directory
- 
- 
+     path: "{{ share_path }}"
+     state: directory 
+
  - name: configure exports
       template:
         src: roles/nfs/files/exports.j2
