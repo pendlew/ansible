@@ -23,8 +23,8 @@
       
 - handlers:
     - name: update nfs exports
-        command: exportfs -a
-        listen: update nfs
+      command: exportfs -a
+      listen: update nfs
  
  
  
