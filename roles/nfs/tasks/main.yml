@@ -21,12 +21,12 @@
     dest: /etc/exports
     notify: update nfs
       
-handlers:
-  - name: update nfs exports
-      command: exportfs -a
-      listen: update nfs
+- handlers:
+    - name: update nfs exports
+        command: exportfs -a
+        listen: update nfs
  
  
  
- tags:
-   - nfs
+ - tags:
+     - nfs
