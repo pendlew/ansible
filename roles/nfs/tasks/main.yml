@@ -27,6 +27,4 @@
       listen: update nfs
  
  
- 
- - tags:
-     - nfs
+ - tags: nfs
