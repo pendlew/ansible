@@ -1,6 +1,3 @@
-vars:
-  share_path: /mnt/nfsroot
-
 - name: Install nfs packages
   package:
     name: 
