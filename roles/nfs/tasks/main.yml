@@ -22,7 +22,6 @@
     owner: root
     group: root
     mode: 0644
-    become: yes
   notify: update nfs
   #lineinfile:
   #  path: /etc/exports
