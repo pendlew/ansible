@@ -20,11 +20,9 @@
     src: roles/nfs/files/exports.j2
     dest: /etc/exports
     notify: update nfs
-      
+
+
 - handlers:
     - name: update nfs exports
       command: exportfs -a
       listen: update nfs
- 
- 
-
