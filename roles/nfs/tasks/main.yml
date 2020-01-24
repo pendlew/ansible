@@ -16,14 +16,16 @@
     state: directory 
 
 - name: configure exports
-  template:
-    src: ~/ansible/roles/nfs/files/exports.j2
-    dest: /etc/exports
-    owner: root
-    group: root
-    mode: 0644
-    become: yes
+  #template:
+  #  src: ~/ansible/roles/nfs/files/exports.j2
+  #  dest: /etc/exports
+  #  owner: root
+  #  group: root
+  #  mode: 0644
+  #  become: yes
+  #  notify: update nfs
+  lineinfile:
+    path: /etc/exports
+    #insertafter: "# This Line"
+    line: "{{ share_path }}(rw,sync,no_root_squash)"
     notify: update nfs
-
-
-
