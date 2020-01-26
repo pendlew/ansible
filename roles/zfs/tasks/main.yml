@@ -14,10 +14,12 @@
  # need to import the zfs pool
  # and share via nfs
  
- - name: start zfs-share
-   service:
-     name: "zfs-share"
-     state: started
  
-  tags:
-    - zfs
+ 
+- name: start zfs-share
+  service:
+    name: "zfs-share"
+    state: started
+ 
+tags:
+  - zfs
