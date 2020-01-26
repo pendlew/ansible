@@ -13,8 +13,8 @@
 
   roles:
     - netdata
-    - zfs
     - nfs
+    - zfs
     - cleanup
     - haveged
    
