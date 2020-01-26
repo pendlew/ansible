@@ -11,8 +11,7 @@
     enabled: yes
     state: started
  
- # need to import the zfs pool
- # and share via nfs
+ # need to manually import the zfs pools if moved from another system.
  
  
  
