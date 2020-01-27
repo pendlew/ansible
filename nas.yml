@@ -17,6 +17,8 @@
     - zfs
     - cleanup
     - haveged
+    - snapd
+    - tvheadend
    
   handlers:
     - name: update nfs exports
