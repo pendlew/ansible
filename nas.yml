@@ -12,6 +12,7 @@
 
 
   roles:
+    - hosts
     - netdata
     - nfs
     - zfs
