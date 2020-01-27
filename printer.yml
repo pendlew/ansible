@@ -6,6 +6,7 @@
   become_method: sudo
 
   roles:
+    - hosts
     - netdata
     - p910nd
     - haveged
