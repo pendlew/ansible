@@ -1,0 +1,14 @@
+- name: Install snapd packages
+  package:
+    name: 
+      - snapd
+    state: present
+ 
+- name: Start service snapd if not started
+  service:
+    name: snapd
+    enabled: yes
+    state: started
+ 
+  tags:
+    - snapd
