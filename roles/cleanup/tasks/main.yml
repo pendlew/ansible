@@ -1,6 +1,11 @@
 - name: remove the unwanted Ubuntu rpi packages
   package:
     name:
-      - cloud-init
+      - c
+    state: absent
+
+- name: remove unwanted Ubuntu snap packages
+  snap:
+    name:
       - lxd
     state: absent
