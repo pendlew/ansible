@@ -12,6 +12,11 @@
     state: started
  
  # need to manually import the zfs pools if moved from another system.
+ # zpool import pool-name
+ 
+ # then share pool
+ # zfs set sharenfs=on pool-name
+
  
  
  
