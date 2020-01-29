@@ -19,3 +19,9 @@
         cache_valid_time: 3600
         upgrade: dist
       when: ansible_distribution == 'Ubuntu'  
+
+    - name: Upgrade Ubuntu snaps
+      command: snap refresh
+      when: ansible_distribution == 'Ubuntu'  
+      
+      
