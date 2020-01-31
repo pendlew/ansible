@@ -10,4 +10,13 @@
     update: yes
     
 - name: install tvheadend
-  
+  package:
+    name: 
+      - tvheadend
+    state: present
+ 
+- name: Start service tvheadend if not started
+  service:
+    name: tvheadend
+    enabled: yes
+    state: started
