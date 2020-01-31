@@ -1,3 +1,13 @@
-- name: Install tvheadend snap package
+- name: remove tvheadend snap package
   snap:
     name: tvheadend
+    state: absent
+    
+- name: install tvheadend apt repository
+  apt_repo:
+    repo: ppa:mamarley/tvheadend-git-stable
+    state: present
+    update: yes
+    
+- name: install tvheadend
+  
