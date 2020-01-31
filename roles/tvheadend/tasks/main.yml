@@ -8,6 +8,7 @@
     repo: ppa:mamarley/tvheadend-git-stable
     state: present
     update: yes
+  when: ansible_distribution == 'Ubuntu'  
     
 - name: install tvheadend
   package:
