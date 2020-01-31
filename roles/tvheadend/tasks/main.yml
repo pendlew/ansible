@@ -4,7 +4,7 @@
     state: absent
     
 - name: install tvheadend apt repository
-  apt_repo:
+  apt_repository:
     repo: ppa:mamarley/tvheadend-git-stable
     state: present
     update: yes
