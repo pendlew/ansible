@@ -1,0 +1,14 @@
+---
+- name: Firewall
+  hosts: gateway2
+  remote_user: pete
+  become: "True"
+  become_method: sudo
+
+  roles:
+    - hosts
+    - netdata
+    - haveged
+    - dnsmasq
+    - shorewall
+    - ntp-server
