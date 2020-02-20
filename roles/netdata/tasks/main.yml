@@ -7,7 +7,7 @@
 - name: Copy over config files
   copy:
     src: ~/ansible/roles/netdata/files/netdata.conf
-    dst: /etc/netdata/netdata,conf
+    dst: /etc/netdata/netdata.conf
     owner: root
     group: root
     mode: '0644'
