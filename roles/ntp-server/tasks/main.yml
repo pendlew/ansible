@@ -1,0 +1,32 @@
+- name: Install ntpd packages
+  package:
+    name: 
+      - ntpd
+    state: present
+
+- name: Copy over config files
+  copy:
+    src: ~/ansible/roles/ntp-server/files/ntp.conf
+    dest: /etc/ntp.conf
+    owner: root
+    group: root
+    mode: '0644'
+  register: configfiles
+  
+- name: Restart service if files changed  
+  service:
+    name: ntpd
+    enabled: yes
+    state: restarted
+  when: configfiles.changed
+
+
+
+- name: Start service ntpd if not started
+  service:
+    name: ntpd
+    enabled: yes
+    state: started
+ 
+  tags:
+    - ntpd
