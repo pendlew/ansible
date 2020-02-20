@@ -1,12 +1,13 @@
 - name: Install mythtv packages
   package:
     name: 
-      - mythtv
+      - mythtv-backend-master
+      - mythweb
     state: present
  
 - name: Start service mythtv if not started
   service:
-    name: mythtv
+    name: mythtv-backend
     enabled: yes
     state: started
  
