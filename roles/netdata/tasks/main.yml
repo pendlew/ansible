@@ -3,7 +3,25 @@
     name: 
       - netdata
     state: present
- 
+
+- name: Copy over config files
+  copy:
+    src: ~/ansible/roles/netdata/files/netdata.conf
+    dst: /etc/netdata/netdata,conf
+    owner: root
+    group: root
+    mode: '0644'
+  register: configfiles
+  
+- name: Restart service if files changed  
+  service:
+    name: netdata
+    enabled: yes
+    state: restarted
+  when: configfiles.changed
+
+
+
 - name: Start service netdata if not started
   service:
     name: netdata
