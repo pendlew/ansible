@@ -19,6 +19,7 @@
     - cleanup
     - haveged
     - snapd
+    - mythtv
     
    
   handlers:
