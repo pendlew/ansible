@@ -1,0 +1,32 @@
+- name: Install dnsmasq packages
+  package:
+    name: 
+      - dnsmasq
+    state: present
+
+- name: Copy over config files
+  copy:
+    src: ~/ansible/roles/dnsmasq/files/dnsmasq.conf
+    dest: /etc/dnsmasq/dnsmasq.conf
+    owner: root
+    group: root
+    mode: '0644'
+  register: configfiles
+  
+- name: Restart service if files changed  
+  service:
+    name: dnsmasq
+    enabled: yes
+    state: restarted
+  when: configfiles.changed
+
+
+
+- name: Start service dnsmasq if not started
+  service:
+    name: dnsmasq
+    enabled: yes
+    state: started
+ 
+  tags:
+    - dnsmasq
