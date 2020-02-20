@@ -1,13 +1,20 @@
 [initial]
 rpinas
 rpiprinter
+gateway2
 
 [rpi]
 rpiprinter
-
+rpinas
+gateway2
+rpinas2
 
 [printer]
 rpiprinter
 
 [nas]
 rpinas
+rpinas2
+
+[firewall]
+gateway2
