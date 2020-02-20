@@ -1,0 +1,14 @@
+- name: Install mythtv packages
+  package:
+    name: 
+      - mythtv
+    state: present
+ 
+- name: Start service mythtv if not started
+  service:
+    name: mythtv
+    enabled: yes
+    state: started
+ 
+  tags:
+    - mythtv
