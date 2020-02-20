@@ -7,7 +7,7 @@
 - name: Copy over config files
   copy:
     src: ~/ansible/roles/dnsmasq/files/dnsmasq.conf
-    dest: /etc/dnsmasq/dnsmasq.conf
+    dest: /etc/dnsmasq.conf
     owner: root
     group: root
     mode: '0644'
