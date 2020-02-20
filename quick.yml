@@ -1,6 +1,6 @@
 ---
-- name: thv install
-  hosts: rpinas
+- name: quick role installer
+  hosts: rpinas2
   remote_user: pete
   become: "True"
   become_method: sudo
@@ -8,6 +8,6 @@
   
 
   roles:
-    - tvheadend
+    - mythtv
    
   
