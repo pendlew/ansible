@@ -21,7 +21,7 @@
 - name: Copy over firmware files
   copy:
     src: ~/ansible/roles/tvheadend/files/dvb-demod-si2168-02.fw
-    dst: /lib/firmware/dvb-demod-si2168-02.fw
+    dest: /lib/firmware/dvb-demod-si2168-02.fw
     owner: root
     group: root
     mode: '0644'
