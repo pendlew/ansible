@@ -1,0 +1,27 @@
+---
+- name: nas2
+  hosts: rpinas2
+  remote_user: pete
+  become: "True"
+  become_method: sudo
+
+  vars:
+    share_path: /mnt/nfsroot
+    share_zpool: testtank
+
+
+
+  roles:
+    - hosts
+    - netdata
+    - nfs
+    - zfs
+    - cleanup
+    - haveged
+    - snapd
+    
+   
+  handlers:
+    - name: update nfs exports
+      command: exportfs -a
+      listen: update nfs
