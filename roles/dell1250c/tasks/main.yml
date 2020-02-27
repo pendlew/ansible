@@ -1,0 +1,22 @@
+- name: Install CUPS 32-bit packages to support printer driver
+  apt:
+    name: 
+      - libc6:i386 
+      - libncurses5:i386 
+      - libstdc++6:i386 
+      - libcupsimage2:i386
+    state: present
+
+- name: Copy over config deb file
+  copy:
+    src: ~/ansible/roles/dell1250c/files/xerox-phaser-6000-6010_1.0-1_i386.deb
+    dest: /tmp/xerox-phaser-6000-6010_1.0-1_i386.deb
+    owner: root
+    group: root
+    mode: '0644'
+    
+- name: Install Xerox driver deb file
+  apt:
+    deb: /tmp/xerox-phaser-6000-6010_1.0-1_i386.deb
+  
+  
