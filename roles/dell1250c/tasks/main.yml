@@ -6,6 +6,12 @@
       - libstdc++6:i386 
       - libcupsimage2:i386
     state: present
+    
+- name: Install CUPS
+  apt:
+    name:
+      - cups
+    state: present
 
 - name: Copy over config deb file
   copy:
@@ -19,4 +25,22 @@
   apt:
     deb: /tmp/xerox-phaser-6000-6010_1.0-1_i386.deb
   
+- name: Install Printer settings
+  copy:
+    src: ~/ansible/roles/dell1250c/files/printer.conf
+    dest: /etc/cups/printer.conf
+    owner: root
+    group: root
+    mode: '0644'
+  register: printerconfigfiles
   
+- name: Restart service if files changed  
+  service:
+    name: cups
+    enabled: yes
+    state: restarted
+  when: printerconfigfiles.changed
+  
+  
+  
+ 
