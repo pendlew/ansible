@@ -1,0 +1,11 @@
+- name: Install libreoffice packages
+  package:
+    name: 
+      - libreoffice
+      - libreoffice-help-en-gb
+      - libreoffice-l10n-en-gb
+      - hunspell-en-gb
+      - hyphen-en-gb
+      - mythes-en-au
+      - mythes-en-us
+    state: present
