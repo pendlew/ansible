@@ -41,6 +41,12 @@
     state: restarted
   when: printerconfigfiles.changed
   
-  
+- name: Install Papersize settings
+  copy:
+    src: ~/ansible/roles/dell1250c/files/papersize
+    dest: /etc/papersize
+    owner: root
+    group: root
+    mode: '0644'  
   
  
