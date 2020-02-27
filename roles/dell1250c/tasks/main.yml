@@ -27,8 +27,8 @@
   
 - name: Install Printer settings
   copy:
-    src: ~/ansible/roles/dell1250c/files/printer.conf
-    dest: /etc/cups/printer.conf
+    src: ~/ansible/roles/dell1250c/files/printers.conf
+    dest: /etc/cups/printers.conf
     owner: root
     group: root
     mode: '0644'
