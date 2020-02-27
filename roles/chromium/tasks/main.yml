@@ -1,0 +1,5 @@
+- name: Install chromium via snaps
+  snap:
+    name:
+      - chromium
+      - chromium-ffmpeg
