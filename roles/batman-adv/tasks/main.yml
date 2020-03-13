@@ -1,0 +1,9 @@
+- name: Install batctl packages
+  package:
+    name: 
+      - batctl
+    state: present
+ 
+ 
+  tags:
+    - batctl
