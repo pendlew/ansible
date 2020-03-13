@@ -1,7 +1,8 @@
-- name: Install batctl packages
+- name: Install batman packages
   package:
     name: 
       - batctl
+      - bridge-utils
     state: present
  
  
