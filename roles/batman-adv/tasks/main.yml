@@ -6,42 +6,42 @@
     state: present
  
  
- - name: Copy over interface config files
-   copy:
-     src: ~/ansible/roles/batman-adv/files/batman-adv
-     dest: /etc/network/interfaces.d/batman-adv
-     owner: root
-     group: root
-     mode: '0644'
-   register: batman-adv-configfiles
+- name: Copy over interface config files
+  copy:
+    src: ~/ansible/roles/batman-adv/files/batman-adv
+    dest: /etc/network/interfaces.d/batman-adv
+    owner: root
+    group: root
+    mode: '0644'
+  register: batman-adv-configfiles
   
- - name: Copy over wpa config files
-   copy:
-     src: ~/ansible/roles/batman-adv/files/wpa-adhoc.conf
-     dest: /etc/wpa_supplicant/wpa-adhoc.conf
-     owner: root
-     group: root
-     mode: '0644'
-   register: batman-adv-configfiles  
+- name: Copy over wpa config files
+  copy:
+    src: ~/ansible/roles/batman-adv/files/wpa-adhoc.conf
+    dest: /etc/wpa_supplicant/wpa-adhoc.conf
+    owner: root
+    group: root
+    mode: '0644'
+  register: batman-adv-configfiles  
    
   
- - name: Copy over dhcp config files
-   copy:
-     src: ~/ansible/roles/batman-adv/files/dhcpcd.conf
-     dest: /etc/dhcpcd.conf
-     owner: root
-     group: root
-     mode: '0644'
-   register: batman-adv-configfiles  
+- name: Copy over dhcp config files
+  copy:
+    src: ~/ansible/roles/batman-adv/files/dhcpcd.conf
+    dest: /etc/dhcpcd.conf
+    owner: root
+    group: root
+    mode: '0644'
+  register: batman-adv-configfiles  
    
 - name: Copy over module config files
-   copy:
-     src: ~/ansible/roles/batman-adv/files/batman-adv-module.conf
-     dest: /etc/modules-load.d/batman-adv-module.conf
-     owner: root
-     group: root
-     mode: '0644'
-   register: batman-adv-configfiles  
+  copy:
+    src: ~/ansible/roles/batman-adv/files/batman-adv-module.conf
+    dest: /etc/modules-load.d/batman-adv-module.conf
+    owner: root
+    group: root
+    mode: '0644'
+  register: batman-adv-configfiles  
    
   
   
