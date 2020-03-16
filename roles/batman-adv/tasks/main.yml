@@ -6,14 +6,24 @@
     state: present
  
  
- - name: Copy over config files
-  copy:
-    src: ~/ansible/roles/batman-adv/files/batman-adv
-    dest: /etc/network/interfaces.d/batman-adv
-    owner: root
-    group: root
-    mode: '0644'
-  register: batman-adv-configfiles
+ - name: Copy over interface config files
+   copy:
+     src: ~/ansible/roles/batman-adv/files/batman-adv
+     dest: /etc/network/interfaces.d/batman-adv
+     owner: root
+     group: root
+     mode: '0644'
+   register: batman-adv-configfiles
+  
+ - name: Copy over interface config files
+   copy:
+     src: ~/ansible/roles/batman-adv/files/wpa-adhoc.conf
+     dest: /etc/wpa_supplicant/wpa-adhoc.conf
+     owner: root
+     group: root
+     mode: '0644'
+   register: batman-adv-configfiles  
+  
   
 - name: Restart service if files changed  
   service:
