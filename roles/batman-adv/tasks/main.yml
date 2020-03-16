@@ -6,5 +6,25 @@
     state: present
  
  
+ - name: Copy over config files
+  copy:
+    src: ~/ansible/roles/batman-adv/files/batman-adv
+    dest: /etc/network/interfaces.d/batman-adv
+    owner: root
+    group: root
+    mode: '0644'
+  register: batman-adv-configfiles
+  
+- name: Restart service if files changed  
+  service:
+    name: networking
+    enabled: yes
+    state: restarted
+  when: batman-adv-configfiles.changed
+ 
+ 
+ 
+ 
+ 
   tags:
     - batctl
