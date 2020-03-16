@@ -1,1 +1,17 @@
+---
+- name: rpimesh 
+  hosts: rpimesh
+  remote_user: pete
+  become: "True"
+  become_method: sudo
 
+  
+  roles:
+    - hosts
+    - netdata
+    - haveged
+    - batman-adv
+    
+    
+   
+  
