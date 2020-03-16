@@ -34,7 +34,14 @@
      mode: '0644'
    register: batman-adv-configfiles  
    
-   
+- name: Copy over module config files
+   copy:
+     src: ~/ansible/roles/batman-adv/files/batman-adv-module.conf
+     dest: /etc/modules-load.d/batman-adv-module.conf
+     owner: root
+     group: root
+     mode: '0644'
+   register: batman-adv-configfiles  
    
   
   
