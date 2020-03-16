@@ -15,7 +15,7 @@
      mode: '0644'
    register: batman-adv-configfiles
   
- - name: Copy over interface config files
+ - name: Copy over wpa config files
    copy:
      src: ~/ansible/roles/batman-adv/files/wpa-adhoc.conf
      dest: /etc/wpa_supplicant/wpa-adhoc.conf
@@ -23,6 +23,19 @@
      group: root
      mode: '0644'
    register: batman-adv-configfiles  
+   
+  
+ - name: Copy over dhcp config files
+   copy:
+     src: ~/ansible/roles/batman-adv/files/dhcpcd.conf
+     dest: /etc/dhcpcd.conf
+     owner: root
+     group: root
+     mode: '0644'
+   register: batman-adv-configfiles  
+   
+   
+   
   
   
 - name: Restart service if files changed  
