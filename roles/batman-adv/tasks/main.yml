@@ -13,7 +13,7 @@
     owner: root
     group: root
     mode: '0644'
-  register: batman-adv-configfiles
+  register: batmanadvconfigfiles
   
 - name: Copy over wpa config files
   copy:
@@ -22,7 +22,7 @@
     owner: root
     group: root
     mode: '0644'
-  register: batman-adv-configfiles  
+  register: batmanadvconfigfiles  
    
   
 - name: Copy over dhcp config files
@@ -32,7 +32,7 @@
     owner: root
     group: root
     mode: '0644'
-  register: batman-adv-configfiles  
+  register: batmanadvconfigfiles  
    
 - name: Copy over module config files
   copy:
@@ -41,7 +41,7 @@
     owner: root
     group: root
     mode: '0644'
-  register: batman-adv-configfiles  
+  register: batmanadvconfigfiles  
    
   
   
@@ -50,7 +50,7 @@
     name: networking
     enabled: yes
     state: restarted
-  when: batman-adv-configfiles.changed
+  when: batmanadvconfigfiles.changed
  
  
  
