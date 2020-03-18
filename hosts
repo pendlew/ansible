@@ -1,5 +1,5 @@
 [initial]
-
+rpi-mesh1
 
 [rpi]
 rpiprinter
@@ -21,4 +21,5 @@ gateway2
 pete-laptop
 
 [rpimesh]
+rpi-mesh1
 rpi-mesh2
