@@ -1,0 +1,41 @@
+- name: Install wpa packages
+  package:
+    name: 
+      - wpa_supplicant
+    state: present
+ 
+ 
+- name: Copy over interface config files
+  copy:
+    src: ~/ansible/roles/wpa-adhoc/files/wpa-adhoc
+    dest: /etc/network/interfaces.d/wpa-adhoc
+    owner: root
+    group: root
+    mode: '0644'
+  register: interfaceconfigfiles
+  
+- name: Copy over wpa config files
+  copy:
+    src: ~/ansible/roles/wpa-adhoc/files/wpa-adhoc.conf
+    dest: /etc/wpa_supplicant/wpa-adhoc.conf
+    owner: root
+    group: root
+    mode: '0644'
+  register: wpaconfigfiles  
+   
+    
+  
+  
+- name: Restart service if files changed  
+  service:
+    name: networking
+    enabled: yes
+    state: restarted
+  when: interfaceconfigfiles.changed or wpaconfigfiles.changed
+ 
+ 
+ 
+ 
+ 
+  tags:
+    - batctl
