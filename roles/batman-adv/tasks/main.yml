@@ -2,7 +2,6 @@
   package:
     name: 
       - batctl
-      - bridge-utils
     state: present
  
  
@@ -13,16 +12,7 @@
     owner: root
     group: root
     mode: '0644'
-  register: interfaceconfigfiles
-  
-- name: Copy over wpa config files
-  copy:
-    src: ~/ansible/roles/batman-adv/files/wpa-adhoc.conf
-    dest: /etc/wpa_supplicant/wpa-adhoc.conf
-    owner: root
-    group: root
-    mode: '0644'
-  register: wpaconfigfiles  
+  register: interfaceconfigfiles  
    
   
 - name: Copy over dhcp config files
@@ -50,7 +40,7 @@
     name: networking
     enabled: yes
     state: restarted
-  when: interfaceconfigfiles.changed or wpaconfigfiles.changed or dhcpconfigfiles.changed or moduleconfigfiles.changed
+  when: interfaceconfigfiles.changed or dhcpconfigfiles.changed or moduleconfigfiles.changed
  
  
  
