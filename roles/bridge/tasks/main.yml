@@ -1,0 +1,30 @@
+- name: Install bridge packages
+  package:
+    name: 
+      - bridge-utils
+    state: present
+ 
+ 
+- name: Copy over interface config files
+  copy:
+    src: ~/ansible/roles/bridge/files/bridge
+    dest: /etc/network/interfaces.d/bridge
+    owner: root
+    group: root
+    mode: '0644'
+  register: interfaceconfigfiles
+   
+  
+- name: Restart service if files changed  
+  service:
+    name: networking
+    enabled: yes
+    state: restarted
+  when: interfaceconfigfiles.changed
+ 
+ 
+ 
+ 
+ 
+  tags:
+    - bridge
