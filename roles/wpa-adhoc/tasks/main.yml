@@ -1,7 +1,7 @@
 - name: Install wpa packages
   package:
     name: 
-      - wpa_supplicant
+      - wpasupplicant
     state: present
  
  
