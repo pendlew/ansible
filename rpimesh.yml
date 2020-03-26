@@ -12,8 +12,9 @@
     - hosts
     - netdata
     - haveged
+    - wpa-adhoc
     - batman-adv
-    
+    - bridge
     
    
   
