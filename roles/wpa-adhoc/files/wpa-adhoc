@@ -1,0 +1,8 @@
+auto wlan1
+iface wlan1 inet manual
+#    wireless-channel auto
+#    wireless-essid SFTL_AHMesh
+#    wireless-mode ad-hoc
+#    wireless-key 1234567890
+#    wpa-driver nl80211
+    wpa-conf /etc/wpa_supplicant/wpa-adhoc.conf    
