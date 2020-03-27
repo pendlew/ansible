@@ -13,8 +13,8 @@
     - netdata
     - haveged
     - wpa-adhoc
-    - batman-adv
-    - bridge
+    - eth0
+  
     
    
   
