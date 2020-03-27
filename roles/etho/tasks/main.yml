@@ -1,0 +1,23 @@
+- name: Copy over interface config files
+  copy:
+    src: ~/ansible/roles/eth0/files/eth0
+    dest: /etc/network/interfaces.d/eth0
+    owner: root
+    group: root
+    mode: '0644'
+  register: interfaceconfigfiles
+   
+  
+- name: Restart service if files changed  
+  service:
+    name: networking
+    enabled: yes
+    state: restarted
+  when: interfaceconfigfiles.changed
+ 
+ 
+ 
+ 
+ 
+  tags:
+    - eth0
