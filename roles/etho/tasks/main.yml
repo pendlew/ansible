@@ -1,6 +1,6 @@
 - name: Copy over interface config files
   copy:
-    src: ~/ansible/roles/eth0/files/eth0
+    src: ~/ansible/roles/etho/files/eth0
     dest: /etc/network/interfaces.d/eth0
     owner: root
     group: root
