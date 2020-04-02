@@ -1,0 +1,34 @@
+- name: Install shorewall packages
+  package:
+    name: 
+      - shorewall
+    state: present
+
+- name: Copy over config files
+  copy:
+    src: ~/ansible/roles/shorewall/files/
+    dest: /etc/shorewall/
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+  ignore_errors: true  
+  register: configfiles
+  
+- name: Restart service if files changed  
+  service:
+    name: shorewall
+    enabled: yes
+    state: restarted
+  when: configfiles.changed
+
+
+
+- name: Start service ntpd if not started
+  service:
+    name: shorewall
+    enabled: yes
+    state: started
+ 
+  tags:
+    - shorewall
