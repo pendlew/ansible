@@ -1,0 +1,2 @@
+net     eth1          dhcp,tcpflags,nosmurfs,routefilter,logmartians
+loc     eth0          dhcp,tcpflags,nosmurfs,routefilter,logmartians
