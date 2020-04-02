@@ -24,7 +24,7 @@
 
 
 
-- name: Start service ntpd if not started
+- name: Start service shorewall if not started
   service:
     name: shorewall
     enabled: yes
