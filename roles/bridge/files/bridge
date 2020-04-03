@@ -1,10 +1,8 @@
-auto eth0
-allow-hotplug eth0
-iface eth0 inet manual
 
 auto br0
 iface br0 inet dhcp
-    bridge_ports eth0 bat0
+    #bridge_ports eth0 bat0
+    bridge_ports eth0 wlan1
     # set the bridge mac to be the eth0 mac
     post-up ip link show eth0 | awk '/ether/ {print $2}' | xargs sudo ip link set br0 address $1
     post-up dhclient -r
