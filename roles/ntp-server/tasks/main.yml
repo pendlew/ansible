@@ -1,7 +1,7 @@
 - name: Install ntpd packages
   package:
     name: 
-      - ntpd
+      - ntp
     state: present
 
 - name: Copy over config files
@@ -15,7 +15,7 @@
   
 - name: Restart service if files changed  
   service:
-    name: ntpd
+    name: ntp
     enabled: yes
     state: restarted
   when: configfiles.changed
@@ -24,9 +24,9 @@
 
 - name: Start service ntpd if not started
   service:
-    name: ntpd
+    name: ntp
     enabled: yes
     state: started
  
   tags:
-    - ntpd
+    - ntp
