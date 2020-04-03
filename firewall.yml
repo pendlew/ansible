@@ -1,6 +1,6 @@
 ---
 - name: Firewall
-  hosts: gateway2
+  hosts: rpi-mesh1
   remote_user: pete
   become: "True"
   become_method: sudo
@@ -9,6 +9,7 @@
     - hosts
     - netdata
     - haveged
-    - dnsmasq
+    - internet
+    - etho
     - shorewall
     - ntp-server
