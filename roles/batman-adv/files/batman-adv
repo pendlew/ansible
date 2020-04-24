@@ -3,6 +3,6 @@ iface bat0 inet manual
     mtu 1468
     pre-up /usr/sbin/batctl if add wlan1
     #pre-up /usr/sbin/ifconfig bat0 mtu 1468
-    pre-up /usr/sbin/batctl gw_mode client
+    pre-up /usr/sbin/batctl gw_mode server 100mbit/10mbit
 
 
