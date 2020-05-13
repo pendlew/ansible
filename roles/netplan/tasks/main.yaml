@@ -19,7 +19,7 @@
  - name: Copy over interface config files
    copy:
    when: ansible_facts['hostname'] == "gateway2"
-    src: ~/ansible/roles/netplan-eth0/files/10-eth0.yaml
+    src: ~/ansible/roles/netplan/files/10-eth0.yaml
     dest: /etc/netplan/10-eth0.yaml
     owner: root
     group: root
