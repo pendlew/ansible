@@ -18,13 +18,15 @@
  
  - name: Copy over interface config files
    copy:
+   when: ansible_facts['hostname'] == "gateway2"
     src: ~/ansible/roles/netplan-eth0/files/10-eth0.yaml
     dest: /etc/netplan/10-eth0.yaml
     owner: root
     group: root
     mode: '0644'
-  register: interfaceconfigfiles
-  notify: netplan generate config
+   register: interfaceconfigfiles
+   notify: netplan generate config
+   
    
   
 - name: Restart service if files changed  
