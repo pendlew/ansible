@@ -6,6 +6,7 @@
     group: root
     mode: '0644'
   register: interfaceconfigfiles
+  notify: netplan generate config
    
   
 - name: Restart service if files changed  
