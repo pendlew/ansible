@@ -1,0 +1,7 @@
+# netplan configuration of Eth1 - dhcp address
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    eth1:
+      dhcp4: yes
