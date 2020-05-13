@@ -30,7 +30,7 @@
     owner: root
     group: root
     mode: '0644'
-  when not: ansible_facts['hostname'] == "gateway2"  
+  when: ansible_facts['hostname'] <> "gateway2"  
   register: interfaceconfigfiles
   notify: netplan generate config  
   
