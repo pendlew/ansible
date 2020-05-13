@@ -7,8 +7,8 @@
 
   roles:
     - hosts
+    - netplan
     - netdata
     - haveged
-    - netplan-eth0
     - shorewall
     - ntp-server
