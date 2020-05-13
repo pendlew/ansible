@@ -1,20 +1,18 @@
  
-  netplan_apply: True
   
-  netplan_packages:
-    - nplan
-    - netplan.io
   
-  - name: Install netplan
-    apt:
-      name: "{{ netplan_packages }}"
-      state: present
-    become: true
-    register: result
-    until: result is successful
+ 
    
- 
- 
+    
+- name: Install netplan
+  netplan_apply: True
+  package:
+    name: 
+      - nplan
+      - netplan.io
+    state: present
+    
+     
  
  - name: Copy over interface config files
    copy:
