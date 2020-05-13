@@ -1,7 +1,7 @@
 - name: Initial Setup
   ####################################
   #
-  # ansible-playbook -v -u USER -k -K initial-setup.yml
+  # ansible-playbook -v -u USER -l <IP ADDRESS> -k -K initial-setup.yml
   #
   ####################################
   
@@ -12,7 +12,7 @@
   #remote_user: pete
   become: "True"
   become_method: sudo
-  hosts: initial
+  hosts: all
   tasks:
     - name: Create DevOps User
       user:
