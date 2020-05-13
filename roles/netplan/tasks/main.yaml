@@ -1,5 +1,5 @@
 - name: Install netplan
-  netplan_apply: True
+  #netplan_apply: True
   package:
     name: 
       - nplan
