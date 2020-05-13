@@ -1,4 +1,4 @@
-# netplan configuration of Eth0 - static address
+# netplan configuration of Eth0 - static address for gateway device
 network:
   version: 2
   renderer: networkd
