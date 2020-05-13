@@ -1,8 +1,4 @@
- 
-  
-  
- 
-   
+    
     
 - name: Install netplan
   netplan_apply: True
@@ -14,16 +10,16 @@
     
      
  
- - name: Copy over interface config files
-   copy:
-   when: ansible_facts['hostname'] == "gateway2"
-    src: ~/ansible/roles/netplan/files/10-eth0-gateway.yaml
-    dest: /etc/netplan/10-eth0-gateway.yaml
-    owner: root
-    group: root
-    mode: '0644'
-   register: interfaceconfigfiles
-   notify: netplan generate config
+- name: Copy over interface config files
+    copy:
+    when: ansible_facts['hostname'] == "gateway2"
+      src: ~/ansible/roles/netplan/files/10-eth0-gateway.yaml
+      dest: /etc/netplan/10-eth0-gateway.yaml
+      owner: root
+      group: root
+      mode: '0644'
+    register: interfaceconfigfiles
+    notify: netplan generate config
    
    
   
@@ -38,5 +34,5 @@
 
  
  
-  tags:
+tags:
     - eth0
