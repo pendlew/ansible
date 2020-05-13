@@ -9,7 +9,7 @@
     state: present
     
      
- 
+# Copy gateway specific eth0 file 
 - name: Copy over interface config files
   copy:
     src: ~/ansible/roles/netplan/files/10-eth0-gateway.yaml
@@ -22,6 +22,17 @@
   notify: netplan generate config
    
    
+# Copy over dhcp eth0 file   
+- name: Copy over interface config files
+  copy:
+    src: ~/ansible/roles/netplan/files/10-eth0-dhcp.yaml
+    dest: /etc/netplan/10-eth0-dhcp.yaml
+    owner: root
+    group: root
+    mode: '0644'
+  when: ansible_facts['hostname'] != "gateway2"  
+  register: interfaceconfigfiles
+  notify: netplan generate config  
   
 - name: Restart service if files changed  
   service:
