@@ -15,4 +15,4 @@
 ###############################################################################
 #ZONE	INTERFACE	OPTIONS
 net     NET_IF          dhcp,tcpflags,nosmurfs,routefilter,logmartians,sourceroute=0,physical=eth1
-loc     LOC_IF          bridge,routeback,dhcp,tcpflags,nosmurfs,routefilter,logmartians,physical=br0
+loc     LOC_IF          routeback,dhcp,tcpflags,nosmurfs,routefilter,logmartians,physical=eth0
