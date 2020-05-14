@@ -44,6 +44,13 @@
   register: interfaceconfigfiles
   notify: netplan generate config  
   
+  
+- name: Delete cloud-init netplan file
+  file:
+    path: /etc/netplan/50-cloud-init.yaml
+    state: absent
+  notify: netplan generate config  
+  
 - name: Restart service if files changed  
   service:
     name: networking
