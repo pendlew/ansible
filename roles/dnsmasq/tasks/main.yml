@@ -13,12 +13,23 @@
     mode: '0644'
   register: configfiles
   
+- name: Copy over config files
+  copy:
+    src: ~/ansible/roles/dnsmasq/files/cleanbrowsing-resolv.conf
+    dest: /etc/cleanbrowsing-resolv.conf
+    owner: root
+    group: root
+    mode: '0644'
+  register: configfiles
+  
 - name: Restart service if files changed  
   service:
     name: dnsmasq
     enabled: yes
     state: restarted
   when: configfiles.changed
+  
+  
 
 
 
