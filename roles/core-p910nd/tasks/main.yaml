@@ -1,5 +1,11 @@
 - name: Install p910nd via snaps
+  # https://github.com/ogra1/p910nd-snap
   snap:
     name:
-      - p910nd-pendle
+      - p910nd-ogra
       
+      
+  #commands to run
+  snap connect p910nd:raw-usb
+  
+  snap set p910nd device="/dev/usb/lp0"
