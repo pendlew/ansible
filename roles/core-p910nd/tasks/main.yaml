@@ -6,6 +6,6 @@
       
       
   #commands to run
-  snap connect p910nd:raw-usb
-  
-  snap set p910nd device="/dev/usb/lp0"
+  shell: |
+    snap connect p910nd:raw-usb
+    snap set p910nd device="/dev/usb/lp0"
