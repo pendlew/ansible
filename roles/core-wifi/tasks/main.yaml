@@ -1,1 +1,12 @@
- 
+ - name: Install wifi via snaps
+  # https://gist.github.com/cyan198/6ecdb86267498a51587b4337e47e10f6
+  snap:
+    name:
+      - network-manager
+      
+      
+  #commands to run
+  shell: |
+    network-manager.nmcli r wifi on
+    network-manager.nmcli r
+    network-manager.nmcli d wifi connect SFTL-NG password <password>
