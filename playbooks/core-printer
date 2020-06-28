@@ -1,0 +1,10 @@
+---
+- name: Ubuntu Core Printer
+  hosts: rpicoreprinter
+  remote_user: pete-chaffe
+  become: yes
+
+  roles:
+    - core-wifi
+    - core-p910nd
+    - core-netdata
