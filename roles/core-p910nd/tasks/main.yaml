@@ -1,0 +1,5 @@
+- name: Install p910nd via snaps
+  snap:
+    name:
+      - p910nd-pendle
+      
