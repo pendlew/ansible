@@ -3,6 +3,22 @@
     name: 
       - autofs
     state: present
+    
+- name: Copy over config files
+  copy:
+    src: ~/ansible/roles/autofs/files/auto.master
+    dest: /etc/auto.master
+    owner: root
+    group: root
+    mode: '0644'
+  register: configfiles
+  
+- name: Restart service if files changed  
+  service:
+    name: autofs
+    enabled: yes
+    state: restarted
+  when: configfiles.changed
  
 - name: Start service autofs if not started
   service:
