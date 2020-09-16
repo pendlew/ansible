@@ -1,0 +1,11 @@
+- name: Install auto packages
+  package:
+    name: 
+      - autofs
+    state: present
+ 
+- name: Start service autofs if not started
+  service:
+    name: autofs
+    enabled: yes
+    state: started
