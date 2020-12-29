@@ -1,0 +1,33 @@
+- name: Install firehol
+    name: 
+      - firehol
+    state: present
+
+- name: Copy over config files
+  copy:
+    src: ~/ansible/roles/firehol/files/
+    dest: /etc/firehol/
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+  ignore_errors: true  
+  register: configfiles
+  
+- name: Restart service if files changed  
+  service:
+    name: firehol
+    enabled: yes
+    state: restarted
+  when: configfiles.changed
+
+
+
+- name: Start service shorewall if not started
+  service:
+    name: firehol
+    enabled: yes
+    state: started
+ 
+  tags:
+    - firehol
